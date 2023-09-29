@@ -35,15 +35,19 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
-## Attack Maps Before Hardening / Security Controls
-#### NSG Allowed Inbound Malicious Flows
-![NSG Allowed Inbound Malicious Flows](https://github.com/kyiez/Azure-SOC/assets/90296943/e8f955ad-e03e-44c2-80f4-43b7bd46fbed)<br>
-#### Linux Syslog Auth Failures
-![Linux Syslog Auth Failures](https://github.com/kyiez/Azure-SOC/assets/90296943/0d91ad52-4cfe-4172-80d8-38fff54db621)<br>
-#### Windows RDP/SMB Auth Failures
-![Windows RDP/SMB Auth Failures](https://github.com/kyiez/Azure-SOC/assets/90296943/9d35bb2d-0132-45b9-a025-d669bf45abd0)<br>
-#### Microsoft SQL Server Auth Failures
-![Microsoft SQL Auth Failures](https://github.com/kyiez/Azure-SOC/assets/90296943/c1be1b13-5822-42db-a33d-a798a7ed54e1)<br>
+## Unauthenticated Scan Results Before Remediation
+#### Unauthenticated Scan Against Vulnerable VM
+![Unauthenticated Scan Against Vulnerable VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/01f2fbb1-f708-4e95-a9f5-54cd15a17af5">)<br>
+#### Unauthenticated Scan Against Vulnerable VM Results
+![Unauthenticated Scan Against Vulnerable VM Results](https://github.com/kyiez/openVAS-Vuln/assets/90296943/22bbb845-62dd-41e3-b00e-5db861122301">)<br>
+#### Authenticated Scan Against Vulnerable VM
+![Windows RDP/SMB Auth Failures](https://github.com/kyiez/openVAS-Vuln/assets/90296943/a1b860f6-8319-4522-9c0f-1f8a39699002">)<br>
+#### Authenticated Scan Against Vulnerable VM Results
+![Microsoft SQL Auth Failures](https://github.com/kyiez/openVAS-Vuln/assets/90296943/5a9a93a1-8245-4011-8ffe-da3e06408b6c">)<br>
+![](https://github.com/kyiez/openVAS-Vuln/assets/90296943/d0008c5e-4b2d-4ffb-88d5-e72ff6f65b6b">)<br>
+
+
+## Credentialed Scan Results Before Remediation
 
 
 ## Metrics Before Hardening / Security Controls
