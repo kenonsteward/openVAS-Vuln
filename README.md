@@ -47,6 +47,14 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 
 
+## Credentialed Scan Results After Remediation
+![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/fbb4236b-49a2-498d-b6aa-dc68e40414eb">)<br>
+![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/8ca62c1c-c7ec-4233-b99b-8e4e55f0bd5e">">)<br>
+
+
+
+
+
 
 
 
