@@ -1,4 +1,4 @@
-# openVAS-Vuln
+# Cybersecurity Vulnerability Management Project
 
 # Building a SOC + Honeynet in Azure (Live Traffic)
 ![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
@@ -14,11 +14,6 @@ Analyzed scan results, highlighting the difference between unauthenticated and c
 Remediated identified vulnerabilities, verified successful remediation through subsequent scans.
 Created a list of remediable vulnerabilities to simulate realistic vulnerability remediation scenarios.
 
-- SecurityEvent (Windows Event Logs)
-- Syslog (Linux Event Logs)
-- SecurityAlert (Log Analytics Alerts Triggered)
-- SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
