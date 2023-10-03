@@ -2,20 +2,22 @@
 
 ## Introduction
 
-In this project, I build an OpenVAS Vulnerability Management Scanner and use it to scan a vulnerable VM with outdated software, while also disabling some security controls on the VM. I then performed unauthenticated and credentialed scans using OpenVAS, and analyze the results while highlighting the difference between the scans. Finally, I remediated several of the identified vulnerabilities and verify successful remediation through follow-up scans.
+In this project, I build an OpenVAS Vulnerability Management Scanner and use it to scan a vulnerable VM with outdated software, while also disabling some security controls on the VM. I then performed unauthenticated and credentialed scans using OpenVAS, and analyzed the results while highlighting the difference between the scans. Finally, I remediated several of the identified vulnerabilities and verify successful remediation through follow-up scans.
 
+<!--
 Set up a secure Azure network with an OpenVAS Vulnerability Management Scanner VM.
 Developed a vulnerable Windows 10 VM, featuring outdated software and disabled security controls.
 Performed unauthenticated and credentialed vulnerability scans using OpenVAS.
 Analyzed scan results, highlighting the difference between unauthenticated and credentialed scans.
 Remediated identified vulnerabilities, verified successful remediation through subsequent scans.
 Created a list of remediable vulnerabilities to simulate realistic vulnerability remediation scenarios.
+-->
 
-The architecture of the mini honeynet in Azure consists of 2 virtual machines, 1 windows (vulnerable) and 1 linux containing OpenVAS.
+The architecture in Azure consisted of 2 virtual machines, 1 windows (vulnerable) and 1 linux containing OpenVAS.
 
-For the "BEFORE" metrics, (vulnerable machine, I turned off the built-in firewall and installed outdated software such as Adobe Reader, VLC Player, and Firefox.  all resources were originally deployed, exposed to the Internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the vulnerable machine, I turned off the built-in firewall and installed outdated software such as Adobe Reader, VLC Player, and Firefox.
 
-For the "AFTER" metrics, (the vulnerable machine was hardened by uninstalling the outdated software and re-enabling the firewall) Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+After scanning, the vulnerable machine was hardened by uninstalling the outdated software and re-enabling the built-in firewall.
 
 ## Unauthenticated Scan Results Before Remediation
 ![Unauthenticated Scan Against Vulnerable VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/01f2fbb1-f708-4e95-a9f5-54cd15a17af5">)<br>
@@ -33,46 +35,36 @@ For the "AFTER" metrics, (the vulnerable machine was hardened by uninstalling th
 ![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/fbb4236b-49a2-498d-b6aa-dc68e40414eb">)<br>
 ![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/8ca62c1c-c7ec-4233-b99b-8e4e55f0bd5e">">)<br>
 
+<!--
+As shown in the images, the unauthenticated scan gathers 3 of 34 items vs. the credentialed scan resulting in 86 of 137 items.
+
+In the credentialed scan after remediation results in 7 of 55 items on the report.
+
+-->
 
 
 
-
-
-
-
-## Metrics Before Hardening / Security Controls
+## Results Before Hardening & Remediation
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-08-04 20:45
-Stop Time 2023-08-05 20:45
 
 | Metric                                                         | Count
 | ------------------------                                       | -----
-| SecurityEvent (Windows VMs)                                    | 47595
-| Syslog (Linux VMs)                                             | 3147
-| SecurityAlert (Windows Defender for Cloud                      | 6
-| SecurityIncident (Sentinel Incidents)                          | 348
-| AzureNetworkAnalytics_CL (NSG Inbound Malicious Flows Allowed) | 366
+| unauthenticated                                                | 3/37
+| credentialed                                                   | 86/137
 
 
-## Attack Maps After Hardening / Security Controls
+<!--## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
-
-## Metrics After Hardening / Security Controls
+-->
+## Results After Hardening & Remediation
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-08-12 23:52
-Stop Time	2023-08-13 23:52
 
-| Metric                                                         | Count  | Change after securing environment  
-| ------------------------                                       | -----  | ---- 
-| SecurityEvent (Windows VMs)                                    | 8349   | -82.46%
-| Syslog (Linux VMs)                                             | 1      | -99.97%
-| SecurityAlert (Windows Defender for Cloud                      | 0      | -100.00%
-| SecurityIncident (Sentinel Incidents)                          | 0      | -100.00%
-| AzureNetworkAnalytics_CL (NSG Inbound Malicious Flows Allowed) | 0      | -100.00%
-
+| Metric                                                         | Count 
+| ------------------------                                       | -----
+| credentialed                                                   | 7/55
 
 ## Conclusion
 
