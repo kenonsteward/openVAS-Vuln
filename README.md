@@ -1,7 +1,5 @@
 # Cybersecurity Vulnerability Management Project
 
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
-
 ## Introduction
 
 In this project, I build an OpenVAS Vulnerability Management Scanner and use it to scan a vulnerable VM with outdated software, while also disabling some security controls on the VM. I then performed unauthenticated and credentialed scans using OpenVAS, and analyze the results while highlighting the difference between the scans. Finally, I remediated several of the identified vulnerabilities and verify successful remediation through follow-up scans.
@@ -13,26 +11,11 @@ Analyzed scan results, highlighting the difference between unauthenticated and c
 Remediated identified vulnerabilities, verified successful remediation through subsequent scans.
 Created a list of remediable vulnerabilities to simulate realistic vulnerability remediation scenarios.
 
+The architecture of the mini honeynet in Azure consists of 2 virtual machines, 1 windows (vulnerable) and 1 linux containing OpenVAS.
 
-## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+For the "BEFORE" metrics, (vulnerable machine, I turned off the built-in firewall and installed outdated software such as Adobe Reader, VLC Player, and Firefox.  all resources were originally deployed, exposed to the Internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
-## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
-
-The architecture of the mini honeynet in Azure consists of the following components:
-
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (2 windows, 1 linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
-
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the Internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
-
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+For the "AFTER" metrics, (the vulnerable machine was hardened by uninstalling the outdated software and re-enabling the firewall) Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Unauthenticated Scan Results Before Remediation
 ![Unauthenticated Scan Against Vulnerable VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/01f2fbb1-f708-4e95-a9f5-54cd15a17af5">)<br>
