@@ -20,25 +20,32 @@ For the vulnerable machine, I turned off the built-in firewall and installed out
 After scanning, the vulnerable machine was hardened by uninstalling the outdated software and re-enabling the built-in firewall.
 
 ## Unauthenticated Scan Results Before Remediation
-![Unauthenticated Scan Against Vulnerable VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/01f2fbb1-f708-4e95-a9f5-54cd15a17af5">)<br>
-![Unauthenticated Scan Against Vulnerable VM Results](https://github.com/kyiez/openVAS-Vuln/assets/90296943/22bbb845-62dd-41e3-b00e-5db861122301">)<br>
+![Unauthenticated Scan Against Vulnerable VM](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/bfce0a20-cff2-42ce-bc76-e25a7482c3c3">)<br>
+![Unauthenticated Scan Against Vulnerable VM Results](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/b292338b-e145-4d1d-a754-df8d729e6787">)<br>
+
+
+
 
 
 ## Credentialed Scan Results Before Remediation
-![Authenticated Scan Against Vulnerable VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/a1b860f6-8319-4522-9c0f-1f8a39699002">)<br>
-![Authenticated Scan Against Vulnerable VM Results](https://github.com/kyiez/openVAS-Vuln/assets/90296943/5a9a93a1-8245-4011-8ffe-da3e06408b6c">)<br>
-![](https://github.com/kyiez/openVAS-Vuln/assets/90296943/d0008c5e-4b2d-4ffb-88d5-e72ff6f65b6b">)<br>
+![Authenticated Scan Against Vulnerable VM](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/ba0b57a3-a86c-41d9-b6b3-fb36188916d2">)<br>
+![Authenticated Scan Against Vulnerable VM Results](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/c6a09f67-6d6d-4a74-891e-78ddb003f705">)<br>
+![](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/7dd6e8c8-1d16-4752-862b-dfbe72571245">)<br>
+
+
+
 
 
 
 ## Credentialed Scan Results After Remediation
-![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/fbb4236b-49a2-498d-b6aa-dc68e40414eb">)<br>
-![Authenticated Scan Against Remediated VM](https://github.com/kyiez/openVAS-Vuln/assets/90296943/8ca62c1c-c7ec-4233-b99b-8e4e55f0bd5e">">)<br>
+![Authenticated Scan Against Remediated VM](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/e11ac504-3705-48c6-9ff2-ee803046d945">)<br>
+![Authenticated Scan Against Remediated VM](https://github.com/kenonsteward/openVAS-Vuln/assets/90296943/6df36607-ea74-46c4-b52f-27fe0ae61e9b">)<br>
+
 
 <!--
-As shown in the images, the unauthenticated scan gathers 3 of 34 items vs. the credentialed scan resulting in 86 of 137 items.
+As shown in the images, the unauthenticated scan gathers 34 items vs. the credentialed scan resulting in 137 items.
 
-In the credentialed scan after remediation results in 7 of 55 items on the report.
+In the credentialed scan after remediation results in 55 items on the report.
 
 -->
 
@@ -51,8 +58,8 @@ The following shows the metrics prior to hardening and remediation:
 
 | Metric                                                         | Count
 | ------------------------                                       | -----
-| unauthenticated                                                | 3/37
-| credentialed                                                   | 86/137
+| unauthenticated                                                | 34
+| credentialed                                                   | 137
 
 
 <!--## Attack Maps After Hardening / Security Controls
@@ -65,7 +72,7 @@ The following table shows the metrics after hardening and remediation:
 -->
 | Metric                                                         | Count 
 | ------------------------                                       | -----
-| credentialed                                                   | 7/55
+| credentialed                                                   | 55
 
 ## Conclusion
 In this project, I establish a vnet containing a vulnerable Windows VM and employ a Linux machine containing OpenVAS in Microsoft Azure. OpenVAS was used to scan the vulnerable VM prior to remediation, and again after remediation and hardening. It is noteworthy that the number of events identified increased after initiating a credentialed scan, demonstrating the effectiveness vs. an unauthenticated scan.
